@@ -4,55 +4,55 @@
 iniciales para que no tengamos un error de sintaxis a
 lo largo del proyecto*/
 
-class Tipo_pelicula{
+class Pelicula{
     private:
     std::string genero;
     int duracion;
-    int horario;
+    int año;
     public:
-    Tipo_pelicula();
-    Tipo_pelicula(std::string g, int d, int k): genero(g), duracion(d),horario(k){};   
+    Pelicula();
+    Pelicula(std::string g, int d, int k): genero(g), duracion(d),año(k){};   
     std::string get_genero();
     int get_duracion();
-    int get_horario();
+    int get_año();
 
     void set_genero(std::string);
     void set_duracion(int);
-    void set_horario(int);
+    void set_año(int);
 };
 
-Tipo_pelicula::Tipo_pelicula(){
+Pelicula::Pelicula(){
     genero="";
     duracion=0;
-    horario=0;
+    año=0;
 }
-std::string Tipo_pelicula::get_genero(){
+std::string Pelicula::get_genero(){
     return genero;
 }
-int Tipo_pelicula:: get_duracion(){
+int Pelicula:: get_duracion(){
     return duracion;
 }
-int Tipo_pelicula::get_horario(){
-    return horario;
+int Pelicula::get_año(){
+    return año;
 }
- void Tipo_pelicula::set_genero(std::string g){
+ void Pelicula::set_genero(std::string g){
     genero=g;
 }
-void Tipo_pelicula:: set_duracion(int d){
+void Pelicula:: set_duracion(int d){
     duracion=d;
 }
-void Tipo_pelicula::set_horario(int k){
-    horario=k;
+void Pelicula::set_año(int k){
+    año=k;
 }
 
-class Lugar_funcion{
+class Cine{
     private:
     std:: string lugar;
     float precio;
     int boletos;
     public:
-    Lugar_funcion();
-    Lugar_funcion(std:: string l, float p, int b): lugar(l), precio(p),boletos(b){};   
+    Cine();
+    Cine(std:: string l, float p, int b): lugar(l), precio(p),boletos(b){};   
     std::string get_lugar();
     float get_precio();
     int get_boletos();
@@ -63,67 +63,67 @@ class Lugar_funcion{
 };
 
 
-Lugar_funcion::Lugar_funcion(){
+Cine::Cine(){
     lugar="";
     precio=0;
     boletos=0;
 }
-std::string Lugar_funcion::get_lugar(){
+std::string Cine::get_lugar(){
     return lugar;
 }
-float Lugar_funcion::get_precio(){
+float Cine::get_precio(){
     return precio;
 }
-int Lugar_funcion::get_boletos(){
+int Cine::get_boletos(){
     return boletos;
 }
- void Lugar_funcion::set_lugar(std::string l){
+ void Cine::set_lugar(std::string l){
     lugar=l;
 }
-void Lugar_funcion:: set_precio(float p){
+void Cine:: set_precio(float p){
     precio=p;
 }
-void Lugar_funcion::set_boletos(int b){
+void Cine::set_boletos(int b){
     boletos=b;
 }
-class Pelicula{
+class Funciones{
     private:
     std::string pelicula;
     std::string actor_princ;
-    int año;
+    int horario;
     public:
-    Pelicula();
-    Pelicula(std:: string pe, std::string ap, int a): pelicula(pe), actor_princ(ap),año(a){};   
+    Funciones();
+    Funciones(std:: string pe, std::string ap, int a): pelicula(pe), actor_princ(ap),horario(a){};   
     std::string get_pelicula();
     std::string get_actor_princ();
-    int get_año();
+    int get_horario();
 
     void set_pelicula(std::string);
     void set_actor_princ(std::string);
-    void set_año(int);
+    void set_horario(int);
 };
 
 
-Pelicula::Pelicula(){
+Funciones::Funciones(){
     pelicula="";
     actor_princ="";
-    año=0;
+    horario=0;
 }
-std::string Pelicula::get_pelicula(){
+std::string Funciones::get_pelicula(){
     return pelicula;
 }
-std::string Pelicula::get_actor_princ(){
+std::string Funciones::get_actor_princ(){
     return actor_princ;
 }
-int Pelicula::get_año(){
-    return año;
+int Funciones::get_horario(){
+    return horario;
 }
- void Pelicula::set_pelicula(std::string pe){
+ void Funciones::set_pelicula(std::string pe){
     pelicula=pe;
 }
-void Pelicula:: set_actor_princ(std::string ap){
+void Funciones:: set_actor_princ(std::string ap){
     actor_princ=ap;
 }
-void Pelicula::set_año(int a){
-    año=a;
+void Funciones::set_horario(int a){
+    horario=a;
 }
