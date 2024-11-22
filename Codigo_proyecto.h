@@ -1,129 +1,122 @@
+#ifndef CODIGO_PROYECTO_H_
+#define CODIGO_PROYECTO_H_
+
 #include <iostream>
 #include <string>
-/* Iniciamos abriendo las bibliotecas
-iniciales para que no tengamos un error de sintaxis a
-lo largo del proyecto*/
+#include "Funciones.h"
 
-class Pelicula{
-    private:
-    std::string genero;
-    int duracion;
-    int año;
-    public:
-    Pelicula();
-    Pelicula(std::string g, int d, int k): genero(g), duracion(d),año(k){};   
-    std::string get_genero();
-    int get_duracion();
-    int get_año();
-
-    void set_genero(std::string);
-    void set_duracion(int);
-    void set_año(int);
-};
-
-Pelicula::Pelicula(){
-    genero="";
-    duracion=0;
-    año=0;
-}
-std::string Pelicula::get_genero(){
-    return genero;
-}
-int Pelicula:: get_duracion(){
-    return duracion;
-}
-int Pelicula::get_año(){
-    return año;
-}
- void Pelicula::set_genero(std::string g){
-    genero=g;
-}
-void Pelicula:: set_duracion(int d){
-    duracion=d;
-}
-void Pelicula::set_año(int k){
-    año=k;
-}
-
-class Cine{
-    private:
-    std:: string lugar;
+class Cine {
+private:
+    Funciones func; // Composición: Funciones como miembro
     float precio;
     int boletos;
-    public:
-    Cine();
-    Cine(std:: string l, float p, int b): lugar(l), precio(p),boletos(b){};   
-    std::string get_lugar();
+    float total; // Cambiado a float para evitar problemas con la precisión
+
+public:
+    Cine(Funciones f); // Constructor por defecto
+    Cine(Funciones f, float p, int b); // Constructor con parámetros
+
+    Funciones get_func();
     float get_precio();
     int get_boletos();
+    
+    void set_func(Funciones f);
+    void set_precio(float p);
+    void set_boletos(int b);
 
-    void set_lugar(std::string);
-    void set_precio(float);
-    void set_boletos(int);
+    void calcular_precio_total();
+    void info_final();
 };
 
+// Implementación
+Cine::Cine(Funciones f) : func(f), precio(0), boletos(0), total(0) {}
 
-Cine::Cine(){
-    lugar="";
-    precio=0;
-    boletos=0;
-}
-std::string Cine::get_lugar(){
-    return lugar;
-}
-float Cine::get_precio(){
-    return precio;
-}
-int Cine::get_boletos(){
-    return boletos;
-}
- void Cine::set_lugar(std::string l){
-    lugar=l;
-}
-void Cine:: set_precio(float p){
-    precio=p;
-}
-void Cine::set_boletos(int b){
-    boletos=b;
-}
-class Funciones{
-    private:
-    std::string pelicula;
-    std::string actor_princ;
-    int horario;
-    public:
-    Funciones();
-    Funciones(std:: string pe, std::string ap, int a): pelicula(pe), actor_princ(ap),horario(a){};   
-    std::string get_pelicula();
-    std::string get_actor_princ();
-    int get_horario();
+Cine::Cine(Funciones f, float p, int b) : func(f), precio(p), boletos(b){}
 
-    void set_pelicula(std::string);
-    void set_actor_princ(std::string);
-    void set_horario(int);
+Funciones Cine::get_func() { 
+    return func; }
+float Cine::get_precio() { 
+    return precio; }
+int Cine::get_boletos() {
+     return boletos; }
+
+void Cine::set_func(Funciones f) {
+     func = f; }
+void Cine::set_precio(float p) { 
+    precio = p; }
+void Cine::set_boletos(int b) {
+     boletos = b; }
+
+void Cine::calcular_precio_total() {
+    total = boletos * precio;
+    std::cout << "El precio total es: " << total << std::endl;
+}
+
+void Cine::info_final() {
+    std::cout << "Boletos: " << boletos
+              << ", Precio: " << precio
+              << ", Total: " << total << std::endl;
+    func.display_infopeli();
+}
+
+class Esfera : public Cine {
+private:
+    int bole;        // Cantidad de boletos VIP
+    float precio_vip; // Precio VIP por boleto
+    float vip_total; // Total VIP
+
+public:
+    // Constructor con parámetros
+    Esfera(Funciones f, int b)
+        : Cine(f, 150, b), bole(b), precio_vip(150), vip_total(0) {}
+
+    void precio_viptotal();
 };
 
+// Métodos
+void Esfera::precio_viptotal() {
+    vip_total = bole * precio_vip;
+    std::cout << "Precio total VIP (Esfera): " << vip_total << std::endl;
+}
 
-Funciones::Funciones(){
-    pelicula="";
-    actor_princ="";
-    horario=0;
+class Antea : public Cine {
+private:
+    int bole;        // Cantidad de boletos VIP
+    float precio_vip; // Precio VIP por boleto
+    float vip_total; // Total VIP
+
+public:
+    // Constructor con parámetros
+    Antea(Funciones f, int b)
+        : Cine(f, 200, b), bole(b), precio_vip(200), vip_total(0) {}
+
+    void precio_viptotal();
+};
+
+// Métodos
+void Antea::precio_viptotal() {
+    vip_total = bole * precio_vip;
+    std::cout << "Precio total VIP (Antea): " << vip_total << std::endl;
 }
-std::string Funciones::get_pelicula(){
-    return pelicula;
+
+class Victoria : public Cine {
+private:
+    int bole;        // Cantidad de boletos VIP
+    float precio_vip; // Precio VIP por boleto
+    float vip_total; // Total VIP
+
+public:
+    // Constructor con parámetros
+    Victoria(Funciones f, int b)
+        : Cine(f, 100, b), bole(b), precio_vip(100), vip_total(0) {}
+
+    void precio_viptotal();
+};
+
+// Métodos
+void Victoria::precio_viptotal() {
+    vip_total = bole * precio_vip;
+    std::cout << "Precio total VIP (Victoria): " << vip_total << std::endl;
 }
-std::string Funciones::get_actor_princ(){
-    return actor_princ;
-}
-int Funciones::get_horario(){
-    return horario;
-}
- void Funciones::set_pelicula(std::string pe){
-    pelicula=pe;
-}
-void Funciones:: set_actor_princ(std::string ap){
-    actor_princ=ap;
-}
-void Funciones::set_horario(int a){
-    horario=a;
-}
+
+#endif // CINE_H_
