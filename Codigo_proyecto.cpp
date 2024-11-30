@@ -26,19 +26,19 @@ int main() {
     float precio;
     int boletos;
         
-    // Crear un objeto de Pelicula fuera del switch, para que esté disponible en todos los case
+    // Crear un objeto de Pelicula fuera del switch, para que este disponible en todos los case
     Pelicula peli("", "", 0, 0, "", "");  // Inicializamos con valores por defecto
-    Funciones funcion1(peli, "", "", 0, ""); // Función inicial vacía
+    Funciones funcion1(peli, "", "", 0, ""); // Funcion inicial vacia
     Cine cine(funcion1,0,0);
     while (true) {
         catalogo_pelis();
 
-        cout << "Escoge el número de la acción que quieres realizar (sin espacios y con número entero): " << endl;
+        cout << "Escoge el numero de la accion que quieres realizar (sin espacios y con numero entero): " << endl;
         cin >> opcion;
 
 
         if (opcion < 1 || opcion > 5) {
-            cout << "Opción errónea, vuelve a intentarlo" << endl;
+            cout << "Opcion erronea, vuelve a intentarlo" << endl;
             return 0;
         }
 
@@ -46,18 +46,18 @@ int main() {
             case 1: {
                 cout << "Da el nombre de la pelicula (sin espacios): ";
                 cin >> nombre;
-                cout << "Agrega el género (sin espacio): ";
+                cout << "Agrega el genero (sin espacio): ";
                 cin >> genero;
-                cout << "Agrega la duración de la pelicula en minutos: ";
+                cout << "Agrega la duracion de la pelicula en minutos: ";
                 cin >> duracion;
-                cout << "Agrega el año de estreno: ";
+                cout << "Agrega el anio de estreno: ";
                 cin >> anio;
                 cout << "Agrega el actor principal (si no lo conoces, pon 'ninguno'): ";
                 cin >> actor_princ;
                 cout << "Agrega el director (si no lo conoces, pon 'ninguno'): ";
                 cin >> director;
 
-                // Creación del objeto Pelicula
+                // Creacion del objeto Pelicula
                 peli = Pelicula(nombre, genero, duracion, anio, actor_princ, director);
                 cout << "\nPelicula agregada: " << endl;
                 cout << peli.display_info() << endl;
@@ -65,22 +65,22 @@ int main() {
             }
             case 2: {
                 if (peli.get_nombre() == "") {
-                    cout << "Primero debes agregar una película." << endl;
+                    cout << "Primero debes agregar una pelicula." << endl;
                     break;
                 }
                 string clasificacion, idioma, subtitulos;
                 int horario;
 
-                cout << "Qué clasificación tiene la película (sin espacios): ";
+                cout << "Que clasificacion tiene la pelicula (sin espacios): ";
                 cin >> clasificacion;
                 cout << "Agrega el idioma (sin espacio): ";
                 cin >> idioma;
-                cout << "Agrega la hora de la función (en formato 24 horas, ej. 1800 para 18:00): ";
+                cout << "Agrega la hora de la funcion (en formato 24 horas, ej. 1800 para 18:00): ";
                 cin >> horario;
-                cout << "Agrega qué idioma tendrá subtítulos (si no hay, pon 'ninguno'): ";
+                cout << "Agrega que idioma tendra subtitulos (si no hay, pon 'ninguno'): ";
                 cin >> subtitulos;
 
-                // Crear una función para esta película
+                // Crear una funcion para esta pelicula
                 funcion1 = Funciones(peli, clasificacion, idioma, horario, subtitulos);
                 cout << "\nFuncion agregada: " << endl;
                 funcion1.display_infopeli();
@@ -129,7 +129,7 @@ int main() {
                     victoria.precio_viptotal();  // Calcula y muestra el precio VIP para Victoria
                 } 
                 else {
-                    cout << "Opción no válida. Por favor selecciona 1, 2 o 3." << endl;
+                    cout << "Opcion no valida. Por favor selecciona 1, 2 o 3." << endl;
                 }
                 break;
          
