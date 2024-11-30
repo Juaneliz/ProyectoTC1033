@@ -22,7 +22,7 @@ int main() {
     string actor_princ;
     string director;
     int duracion;
-    int año;
+    int anio;
     float precio;
     int boletos;
         
@@ -51,14 +51,14 @@ int main() {
                 cout << "Agrega la duración de la pelicula en minutos: ";
                 cin >> duracion;
                 cout << "Agrega el año de estreno: ";
-                cin >> año;
+                cin >> anio;
                 cout << "Agrega el actor principal (si no lo conoces, pon 'ninguno'): ";
                 cin >> actor_princ;
                 cout << "Agrega el director (si no lo conoces, pon 'ninguno'): ";
                 cin >> director;
 
                 // Creación del objeto Pelicula
-                peli = Pelicula(nombre, genero, duracion, año, actor_princ, director);
+                peli = Pelicula(nombre, genero, duracion, anio, actor_princ, director);
                 cout << "\nPelicula agregada: " << endl;
                 cout << peli.display_info() << endl;
                 break;
