@@ -11,7 +11,7 @@ private:
     string nombre;           // Nombre de la película
     string genero;           // Género de la película
     int duracion;            // Duración de la película en minutos
-    int año;                 // Año de estreno de la película
+    int anio;                 // Año de estreno de la película
     string actor_princ;      // Actor principal de la película
     string director;         // Director de la película
 
@@ -21,13 +21,13 @@ public:
     
     // Constructor con parámetros
     Pelicula(string n, string g, int d, int k, string ap, string di) 
-        : nombre(n), genero(g), duracion(d), año(k), actor_princ(ap), director(di) {}
+        : nombre(n), genero(g), duracion(d), anio(k), actor_princ(ap), director(di) {}
 
     // Métodos getter (accesores)
     string get_nombre();        // Regresa el nombre de la película
     string get_genero();        // Regresa el género de la película
     int get_duracion();         // Regresa la duración de la película
-    int get_año();              // Regresa el año de estreno
+    int get_anio();              // Regresa el año de estreno
     string get_actor_princ();   // Regresa el actor principal
     string get_director();      // Regresa el director de la película
 
@@ -35,7 +35,7 @@ public:
     void set_nombre(string);    // Establece el nombre de la película
     void set_genero(string);    // Establece el género de la película
     void set_duracion(int);     // Establece la duración de la película
-    void set_año(int);          // Establece el año de estreno
+    void set_anio(int);          // Establece el año de estreno
     void set_actor_princ(string); // Establece el actor principal
     void set_director(string);  // Establece el director de la película
 
@@ -50,7 +50,7 @@ Pelicula::Pelicula() {
     nombre = "";
     genero = "";
     duracion = 0;
-    año = 0;
+    anio = 0;
     actor_princ = "";
     director = "";
 }
@@ -68,8 +68,8 @@ int Pelicula::get_duracion() {
     return duracion;  // Retorna la duración de la película en minutos
 }
 
-int Pelicula::get_año() {
-    return año;  // Retorna el año de estreno de la película
+int Pelicula::get_anio() {
+    return anio;  // Retorna el año de estreno de la película
 }
 
 string Pelicula::get_actor_princ() {
@@ -93,8 +93,8 @@ void Pelicula::set_duracion(int d) {
     duracion = d;  // Establece la duración de la película
 }
 
-void Pelicula::set_año(int k) {
-    año = k;  // Establece el año de estreno
+void Pelicula::set_anio(int k) {
+    anio = k;  // Establece el año de estreno
 }
 
 void Pelicula::set_actor_princ(string ap) {
@@ -111,7 +111,7 @@ string Pelicula::display_info() {
     return "Información de película: " + nombre + " " +
            "Género: " + genero + " " +
            "Duración: " + std::to_string(duracion) + " " +
-           "Año: " + std::to_string(año) + " " +
+           "Año: " + std::to_string(anio) + " " +
            "Actor principal: " + actor_princ + " " +
            "Director: " + director;
 }
