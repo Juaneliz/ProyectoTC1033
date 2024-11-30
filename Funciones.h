@@ -7,111 +7,111 @@
 
 class Funciones : public Pelicula {
 private:
-    Pelicula pelicula;         // Instancia de la clase Pelicula asociada a esta función
-    std::string clasificacion; // Clasificación de la película 
-    std::string idioma;       // Idioma en el que se proyecta la película
-    int horario;              // Horario de la función en formato 24 horas (ej. 1800 para 18:00)
-    std::string subtitulos;   // Información sobre los subtítulos
+    Pelicula pelicula;         // Instancia de la clase Pelicula asociada a esta funcion
+    std::string clasificacion; // Clasificacion de la pelicula 
+    std::string idioma;       // Idioma en el que se proyecta la pelicula
+    int horario;              // Horario de la funcion en formato 24 horas (ej. 1800 para 18:00)
+    std::string subtitulos;   // Informacion sobre los subtitulos
 
 public:
     // Constructor por defecto, establece valores por defecto
     Funciones(Pelicula& p);
 
-    // Constructor con parámetros, establece valores específicos
+    // Constructor con parametros, establece valores especificos
     Funciones(Pelicula& p, std::string cl, std::string i, int h, std::string s);
 
-    // Métodos getter (accesores)
+    // Metodos getter (accesores)
     Pelicula& get_pelicula();         // Devuelve la referencia al objeto Pelicula asociado
-    std::string get_idioma();         // Devuelve el idioma de la función
-    int get_horario();                // Devuelve el horario de la función
-    std::string get_subtitulos();     // Devuelve el tipo de subtítulos
-    std::string get_clasificacion();  // Devuelve la clasificación de la película
+    std::string get_idioma();         // Devuelve el idioma de la funcion
+    int get_horario();                // Devuelve el horario de la funcion
+    std::string get_subtitulos();     // Devuelve el tipo de subtitulos
+    std::string get_clasificacion();  // Devuelve la clasificacion de la pelicula
 
-    // Métodos setter (mutadores)
-    void set_pelicula(Pelicula& p);   // Establece el objeto Pelicula asociado a esta función
-    void set_idioma(std::string i);   // Establece el idioma de la función
-    void set_horario(int h);          // Establece el horario de la función
-    void set_subtitulos(std::string s); // Establece la información de subtítulos
-    void set_clasificacion(std::string cl); // Establece la clasificación de la película
+    // Metodos setter (mutadores)
+    void set_pelicula(Pelicula& p);   // Establece el objeto Pelicula asociado a esta funcion
+    void set_idioma(std::string i);   // Establece el idioma de la funcion
+    void set_horario(int h);          // Establece el horario de la funcion
+    void set_subtitulos(std::string s); // Establece la informacion de subtitulos
+    void set_clasificacion(std::string cl); // Establece la clasificacion de la pelicula
 
-    // Método para mostrar la información completa de la función y la película
-    void display_infopeli();          // Muestra toda la información de la función y la película
+    // Metodo para mostrar la informacion completa de la funcion y la pelicula
+    void display_infopeli();          // Muestra toda la informacion de la funcion y la pelicula
 };
 
-// Implementación de los métodos
+// Implementacion de los metodos
 
 // Constructor por defecto, inicializa con valores predeterminados
 Funciones::Funciones(Pelicula& p)
-    : pelicula(p), clasificacion(""), idioma(""), horario(0), subtitulos("español") {}
+    : pelicula(p), clasificacion(""), idioma(""), horario(0), subtitulos("espaniol") {}
 
-// Constructor con parámetros, establece todos los atributos
+// Constructor con parametros, establece todos los atributos
 Funciones::Funciones(Pelicula& p, std::string cl, std::string i, int h, std::string s)
     : pelicula(p), clasificacion(cl), idioma(i), horario(h), subtitulos(s) {}
 
-// Métodos getter (accesores)
+// Metodos getter (accesores)
 
-// Devuelve la referencia al objeto Pelicula asociado a esta función
+// Devuelve la referencia al objeto Pelicula asociado a esta funcion
 Pelicula& Funciones::get_pelicula() { 
     return pelicula; 
 }
 
-// Devuelve el idioma de la función 
+// Devuelve el idioma de la funcion 
 std::string Funciones::get_idioma() { 
     return idioma; 
 }
 
-// Devuelve el horario de la función en formato de 24 horas (por ejemplo, 1800 para las 18:00)
+// Devuelve el horario de la funcion en formato de 24 horas (por ejemplo, 1800 para las 18:00)
 int Funciones::get_horario() { 
     return horario; 
 }
 
-// Devuelve la información sobre los subtítulos
+// Devuelve la informacion sobre los subtitulos
 std::string Funciones::get_subtitulos() { 
     return subtitulos; 
 }
 
-// Devuelve la clasificación de la película
+// Devuelve la clasificacion de la pelicula
 std::string Funciones::get_clasificacion() { 
     return clasificacion; 
 }
 
-// Métodos setter (mutadores)
+// Metodos setter (mutadores)
 
-// Establece el objeto Pelicula asociado a esta función
+// Establece el objeto Pelicula asociado a esta funcion
 void Funciones::set_pelicula(Pelicula& p) { 
     pelicula = p; 
 }
 
-// Establece el idioma de la función (por ejemplo, "español", "inglés")
+// Establece el idioma de la funcion (por ejemplo, "espaniol", "ingles")
 void Funciones::set_idioma(std::string i) { 
     idioma = i; 
 }
 
-// Establece el horario de la función en formato 24 horas (ej. 1800 para las 18:00)
+// Establece el horario de la funcion en formato 24 horas (ej. 1800 para las 18:00)
 void Funciones::set_horario(int h) { 
     horario = h; 
 }
 
-// Establece la información de subtítulos (por ejemplo, "español", "ninguno")
+// Establece la informacion de subtitulos (por ejemplo, "espaniol", "ninguno")
 void Funciones::set_subtitulos(std::string s) { 
     subtitulos = s; 
 }
 
-// Establece la clasificación de la película (por ejemplo, "PG", "R")
+// Establece la clasificacion de la pelicula (por ejemplo, "PG", "R")
 void Funciones::set_clasificacion(std::string cl) { 
     clasificacion = cl; 
 }
 
-// Muestra toda la información de la función y la película asociada
+// Muestra toda la informacion de la funcion y la pelicula asociada
 void Funciones::display_infopeli() {
-    // Muestra los detalles de la función
+    // Muestra los detalles de la funcion
     std::cout << "Horario: " << horario
               << ", Idioma: " << idioma
-              << ", Subtítulos: " << subtitulos
-              << ", Clasificación: " << clasificacion
+              << ", Subtitulos: " << subtitulos
+              << ", Clasificacion: " << clasificacion
               << std::endl;
 
-    // Llama a display_info() de la clase Pelicula para mostrar la información de la película asociada
+    // Llama a display_info() de la clase Pelicula para mostrar la informacion de la pelicula asociada
     pelicula.display_info();
 }
 
